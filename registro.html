@@ -106,7 +106,7 @@
 </head>
 <body>
     <header class="navbar">
-<div class="logo">
+        <div class="logo">
             <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
                 <img src="logotransp.png" alt="ScriptKore Logo" style="width: 36px; height: 36px; image-rendering: pixelated;">
                 <div class="pixel-font" style="margin-top: 4px;">
@@ -118,10 +118,11 @@
 
     <main class="auth-container">
         <div class="auth-card">
-            <h1>Crea tu Cuenta: </h1>
-            <p class="auth-subtitle"> ¡Únete a la comunidad de scripteros! </p>
+            <h1>Crea tu Cuenta:</h1>
+            <p class="auth-subtitle">¡Únete a la comunidad de scripteros!</p>
             
-            <form action="registro.html" method="POST">
+            <!-- CORREGIDO: Apunta a index.html para simular el flujo completo de la LP -->
+            <form action="index.html" method="GET">
                 <div class="form-group">
                     <label for="username"><i class="pixelart-icons-font-user"></i> Username:</label>
                     <input type="text" id="username" name="username" placeholder="mr-robot" required>
@@ -140,7 +141,7 @@
             </form>
             
             <div class="login-link">
-                ¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>
+                ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión</a>
             </div>
         </div>
     </main>
