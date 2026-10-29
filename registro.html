@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - ScriptKore</title>
+    <link rel="icon" type="image/png" href="logotransp.png">
+    
+    <!-- Fuente premium Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LIBRERÍA OFICIAL Y FUENTE DEL LOGO -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixelarticons/fonts/pixelart-icons-font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+            padding: 20px;
+        }
+        .auth-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .auth-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .auth-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        .form-group label i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-submit i {
+            font-size: 1.2rem;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .login-link a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+<div class="logo">
+            <a href="index.php" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="logotransp.png" alt="ScriptKore Logo" style="width: 36px; height: 36px; image-rendering: pixelated;">
+                <div class="pixel-font" style="margin-top: 4px;">
+                    <span style="color: #ffffff;">SCRIPT</span><span style="color: #a855f7;">KORE</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1>Crea tu Cuenta: </h1>
+            <p class="auth-subtitle"> ¡Únete a la comunidad de scripteros! </p>
+            
+            <form action="registro.php" method="POST">
+                <div class="form-group">
+                    <label for="username"><i class="pixelart-icons-font-user"></i> Username:</label>
+                    <input type="text" id="username" name="username" placeholder="mr-robot" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="pixelart-icons-font-message"></i> Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="script@scriptkore.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="pixelart-icons-font-lock"></i> Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="pixelart-icons-font-check"></i> Registrarse
+                </button>
+            </form>
+            
+            <div class="login-link">
+                ¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

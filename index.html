@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptKore - Inicio</title>
+    <link rel="icon" type="image/png" href="logotransp.png">
+
+    <!-- Fuente premium Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LIBRERÍA 16-BITS Y FUENTE DEL LOGO -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixelarticons/fonts/pixelart-icons-font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <header class="navbar">
+<div class="logo">
+            <a href="index.php" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="logotransp.png" alt="ScriptKore Logo" style="width: 36px; height: 36px; image-rendering: pixelated;">
+                <div class="pixel-font" style="margin-top: 4px;">
+                    <span style="color: #ffffff;">SCRIPT</span><span style="color: #a855f7;">KORE</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Buscar scripts, librerías, usuarios...">
+        </div>
+        <div class="header-actions">
+            <!-- Iconos 16-bit -->
+            <span><i class="pixelart-icons-font-bell"></i></span>
+            <span><i class="pixelart-icons-font-message"></i></span>
+            <span><i class="pixelart-icons-font-user"></i></span>
+            <a href="registro.php" class="btn-register">Registrarse</a>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <!-- Sidebar Izquierdo -->
+        <aside class="sidebar left-sidebar">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="pixelart-icons-font-home"></i> Inicio</a>
+                <a href="#" class="nav-item"><i class="pixelart-icons-font-heart"></i> Popular</a>
+                <a href="#" class="nav-item"><i class="pixelart-icons-font-folder"></i> Catálogo</a>
+                <a href="#" class="nav-item"><i class="pixelart-icons-font-shield"></i> Reglas</a>
+            </nav>
+            
+            <div class="widget tags-widget">
+                <h3>Tags en Tendencia</h3>
+                <div class="tags-container">
+                    <span class="tag">#javascript</span>
+                    <span class="tag">#powershell</span>
+                    <span class="tag">#docker</span>
+                    <span class="tag">#php8</span>
+                    <span class="tag">#aws</span>
+                    <span class="tag">#sysadmin</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Feed Central -->
+        <main class="feed">
+            <div class="create-post-box">
+                <div class="avatar-placeholder small"><i class="pixelart-icons-font-user"></i></div>
+                <input type="text" placeholder="Compartir un script, snippet o hacer una pregunta..." class="post-input">
+                <button class="icon-btn"><i class="pixelart-icons-font-image"></i></button>
+                <button class="icon-btn"><i class="pixelart-icons-font-link"></i></button>
+            </div>
+
+            <section class="platforms-catalog">
+                <h3 class="section-title">Catálogo de Exploits</h3>
+                <div class="card-3d-container" id="canvas-container">
+                    <!-- Three.js Canvas -->
+                </div>
+            </section>
+
+            <div class="feed-header">
+                <h2>Feed Principal</h2>
+                <div class="feed-filters">
+                    <button class="filter-btn active">Relevantes</button>
+                    <button class="filter-btn">Nuevos</button>
+                    <button class="filter-btn">Top</button>
+                </div>
+            </div>
+            
+            <!-- Posts -->
+            <article class="post">
+                <div class="vote-column">
+                    <button class="upvote"><i class="pixelart-icons-font-chevron-up"></i></button>
+                    <span class="score">1067</span>
+                    <button class="downvote"><i class="pixelart-icons-font-chevron-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-header">
+                        <a href="#" class="community">c/WindowsExploits</a>
+                        <span class="separator">•</span>
+                        <span class="author">Publicado por u/ElliotAlderson hace 3 horas</span>
+                    </div>
+                    <h2 class="post-title">Script en PowerShell para automatizar respaldos en servidores Windows</h2>
+                    <p class="post-description">Dejo este snippet que comprime carpetas específicas de logs y las sube automáticamente a un bucket de S3 usando tareas programadas. Ahorra muchísimo tiempo los viernes.</p>
+                    <div class="code-preview">
+                        <code>Compress-Archive -Path C:\Logs\* -DestinationPath C:\Backups\logs_$(Get-Date -f "yyyyMMdd").zip</code>
+                    </div>
+                    <div class="post-footer">
+                        <button class="action-btn"><i class="pixelart-icons-font-message"></i> 56 Comentarios</button>
+                        <button class="action-btn"><i class="pixelart-icons-font-forward"></i> Compartir</button>
+                        <button class="action-btn"><i class="pixelart-icons-font-save"></i> Guardar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="vote-column">
+                    <button class="upvote"><i class="pixelart-icons-font-chevron-up"></i></button>
+                    <span class="score">856</span>
+                    <button class="downvote"><i class="pixelart-icons-font-chevron-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-header">
+                        <a href="#" class="community">c/desarrollo_web</a>
+                        <span class="separator">•</span>
+                        <span class="author">Publicado por u/CodeNinja hace 5 horas</span>
+                    </div>
+                    <h2 class="post-title">Conexión PDO segura con PHP y MySQL (Plantilla)</h2>
+                    <p class="post-description">Plantilla base para evitar inyecciones SQL. Utiliza variables de entorno para las credenciales y maneja las excepciones correctamente. Ideal para quienes van empezando con bases de datos relacionales.</p>
+                    <div class="post-footer">
+                        <button class="action-btn"><i class="pixelart-icons-font-message"></i> 112 Comentarios</button>
+                        <button class="action-btn"><i class="pixelart-icons-font-forward"></i> Compartir</button>
+                        <button class="action-btn"><i class="pixelart-icons-font-save"></i> Guardar</button>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar Derecho -->
+        <aside class="sidebar right-sidebar">
+            <div class="widget news-widget">
+                <h3><i class="pixelart-icons-font-article"></i> Noticias Tech & Scripts</h3>
+                <ul class="news-list">
+                    <li>
+                        <span class="news-date">Hoy</span>
+                        <a href="#" class="news-link">Lanzamiento de Python 3.12: Mejoras de rendimiento en el intérprete.</a>
+                    </li>
+                    <li>
+                        <span class="news-date">Ayer</span>
+                        <a href="#" class="news-link">Vulnerabilidad crítica encontrada en repositorios públicos de NPM.</a>
+                    </li>
+                    <li>
+                        <span class="news-date">Hace 3 días</span>
+                        <a href="#" class="news-link">Docker anuncia nuevos comandos para optimizar imágenes multicapa.</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget about-widget">
+                <h3>Sobre ScriptKore</h3>
+                <p>El hub principal para compartir, descubrir y debatir sobre scripts de automatización, desarrollo, bases de datos y utilidades del sistema.</p>
+                <div class="disclaimer">
+                    <strong>DISCLAIMER:</strong> Sitio con fines educativos y de desarrollo profesional.
+                </div>
+                <a href="registro.php" class="btn btn-primary full-width">Crear Publicación</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script src="three-catalog.js"></script>
+</body>
+</html>
