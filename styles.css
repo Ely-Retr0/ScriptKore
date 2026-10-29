@@ -325,3 +325,55 @@ a {
     image-rendering: pixelated;
     border-radius: 4px;
 }
+
+/* --- DISEÑO RESPONSIVO PARA MÓVILES Y TABLETS --- */
+@media screen and (max-width: 900px) {
+    /* Ocultar los sidebars laterales en pantallas chicas para dar prioridad al feed */
+    .sidebar {
+        display: none;
+    }
+    
+    /* Ajustar el contenedor principal a pantalla completa */
+    .layout-container {
+        padding: 0 10px;
+        gap: 0;
+    }
+    
+    /* Hacer que la barra de búsqueda se adapte al espacio del header */
+    .search-container {
+        max-width: 200px;
+        margin: 0 10px;
+    }
+
+    /* Reducir el tamaño del logo para que no sature la barra en celulares */
+    .pixel-font {
+        font-size: 0.5rem !important;
+    }
+
+    /* Apilar el catálogo 3D en columna o reducir altura en tablets/móviles */
+    .card-3d-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .model-wrapper {
+        height: 100px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* En celulares muy chicos, ocultar la barra de búsqueda del header para ahorrar espacio */
+    .search-container {
+        display: none;
+    }
+
+    .navbar {
+        padding: 10px 12px;
+    }
+
+    /* Ajustar los botones de acción del header */
+    .header-actions {
+        gap: 10px;
+    }
+}
