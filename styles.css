@@ -594,62 +594,59 @@ a {
 /* ==========================================================
    --- DISEÑO RESPONSIVO PROFESIONAL (MÓVILES Y TABLETS) ---
    ========================================================== */
-@media screen and (max-width: 900px) {
-    /* Ocultar ambos sidebars para que el contenido respire en pantallas chicas */
-    .left-sidebar, .right-sidebar {
-        display: none !important;
-    }
-    
+@media screen and (max-width: 1024px) {
+    /* Permitir que los sidebars se adapten en lugar de desaparecer por completo */
     .layout-container {
-        padding: 0 8px;
-        margin: 12px auto;
-        display: block;
+        flex-direction: column;
+        padding: 0 12px;
+        margin: 16px auto;
+        gap: 20px;
     }
 
-    /* Reestructurar Navbar en móviles */
-    .navbar {
-        padding: 10px 14px;
-        gap: 10px;
+    /* El feed toma todo el ancho disponible */
+    .feed {
+        max-width: 100%;
+        order: 1; /* El feed va primero */
     }
 
-    /* Ocultar la barra de búsqueda ancha para liberar espacio crítico */
-    .search-container {
-        display: none;
+    /* El sidebar izquierdo (Menú y Tags) se coloca arriba o se compacta */
+    .left-sidebar {
+        width: 100%;
+        order: 2;
     }
 
-    /* Ajustar tamaño del logotipo para móviles */
-    .logo img {
-        width: 30px !important;
-        height: 30px !important;
-    }
-    
-    .pixel-font {
-        font-size: 0.55rem !important;
-    }
-
-    /* Reducir espaciado de acciones del header */
-    .header-actions {
-        gap: 10px;
-    }
-
-    .header-actions span [class^="pixelart-icons-font-"] {
-        font-size: 1.3rem;
-    }
-
-    .btn-register {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-
-    /* Caja de crear post fluida */
-    .create-post-box {
-        padding: 10px 12px;
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 8px;
+        justify-content: center;
+        margin-bottom: 16px;
     }
 
-    .post-input {
+    .nav-item {
         padding: 8px 12px;
         font-size: 0.85rem;
+    }
+
+    /* El sidebar derecho (Noticias y Sobre ScriptKore) va después del feed */
+    .right-sidebar {
+        width: 100%;
+        order: 3;
+    }
+
+    /* Reestructurar Navbar */
+    .navbar {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+
+    .search-container {
+        max-width: 300px;
+        margin: 0 10px;
+    }
+
+    .pixel-font {
+        font-size: 0.6rem !important;
     }
 
     /* Catálogo 3D en carrusel horizontal con scroll táctil suave */
@@ -657,7 +654,7 @@ a {
         display: flex;
         flex-direction: row;
         overflow-x: auto;
-        height: 100px;
+        height: 105px;
         gap: 12px;
         padding-bottom: 8px;
         scroll-snap-type: x mandatory;
@@ -665,50 +662,59 @@ a {
     }
 
     .model-wrapper {
-        min-width: 110px;
+        min-width: 120px;
         height: 100px;
         flex-shrink: 0;
         scroll-snap-align: start;
     }
-
-    /* Ajustes generales del feed y posts en móviles */
-    .feed {
-        max-width: 100%;
-    }
-
-    .post {
-        margin-bottom: 15px;
-    }
-
-    .vote-column {
-        width: 40px;
-        padding: 10px 4px;
-    }
-
-    .post-content {
-        padding: 12px;
-    }
-
-    .post-title {
-        font-size: 1.05rem;
-    }
-
-    .post-description {
-        font-size: 0.85rem;
-    }
 }
 
-@media screen and (max-width: 480px) {
-    /* Pantallas súper chicas (iPhone SE, etc.) */
+@media screen and (max-width: 600px) {
+    /* Pantallas de celular pequeñas */
     .navbar {
-        padding: 8px 10px;
+        padding: 8px 12px;
+    }
+
+    .search-container {
+        display: none; /* Ocultar barra de búsqueda solo en móviles muy pequeños para ahorrar espacio */
+    }
+
+    .logo img {
+        width: 28px !important;
+        height: 28px !important;
     }
     
     .pixel-font {
-        font-size: 0.45rem !important;
+        font-size: 0.5rem !important;
     }
 
-    .header-actions span:not(:last-child) {
-        display: none; /* Ocultar iconos secundarios si el espacio es extremadamente reducido, dejando solo el botón de registro */
+    .header-actions {
+        gap: 8px;
+    }
+
+    .header-actions span [class^="pixelart-icons-font-"] {
+        font-size: 1.2rem;
+    }
+
+    .btn-register {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Menú lateral compacto en celulares */
+    .nav-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .nav-item {
+        justify-content: center;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .nav-item [class^="pixelart-icons-font-"] {
+        margin-right: 6px;
     }
 }
